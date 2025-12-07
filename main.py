@@ -34,7 +34,7 @@ def index():
             input_data = request.form['input_data']
 
             # Write the pasted input to a temporary file
-            with open('flask_input.txt', 'w') as f:
+            with open('/tmp/flask_input.txt', 'w') as f:
                 f.write(input_data)
 
             # Dynamically import the module and class
