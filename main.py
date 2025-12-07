@@ -73,7 +73,3 @@ def index():
                            selected_day=selected_day,
                            selected_part=selected_part,
                            input_data=input_data)
-
-if __name__ == '__main__':
-    app.run()
-
