@@ -75,6 +75,5 @@ def index():
                            input_data=input_data)
 
 if __name__ == '__main__':
-    # Use 0.0.0.0 to make it accessible on the network
-    app.run(host='0.0.0.0', port=5001, debug=True)
+    app.run()
 
