@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Advent of Code Solver</title>
+    <style>
+        body { font-family: sans-serif; margin: 2em; background-color: #f4f4f4; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 2em; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        select, textarea, input[type="submit"] { width: 100%; padding: 10px; margin-bottom: 1em; border-radius: 4px; border: 1px solid #ccc; }
+        textarea { height: 200px; font-family: monospace; }
+        input[type="submit"] { background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        .result { background: #e0e0e0; padding: 1em; border-radius: 4px; white-space: pre-wrap; font-family: monospace; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Advent of Code Solver</h1>
+        <form method="post">
+            <label for="day">Day:</label>
+            <select name="day" id="day">
+                {% for d in available_days %}
+                <option value="{{ d }}" {% if d == selected_day %}selected{% endif %}>Day {{ d }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="part">Part:</label>
+            <select name="part" id="part">
+                <option value="One" {% if "One" == selected_part %}selected{% endif %}>Part One</option>
+                <option value="Two" {% if "Two" == selected_part %}selected{% endif %}>Part Two</option>
+            </select>
+
+            <label for="input_data">Input Data:</label>
+            <textarea name="input_data" id="input_data" required>{{ input_data or '' }}</textarea>
+
+            <input type="submit" value="Solve">
+        </form>
+
+        {% if result %}
+        <h2>Result:</h2>
+        <pre class="result">{{ result }}</pre>
+        {% endif %}
+    </div>
+</body>
+</html>
